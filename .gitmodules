@@ -1,3 +1,6 @@
 [submodule "protobuf"]
 	path = protobuf
 	url = ../protobuf
+[submodule "zeromq"]
+	path = zeromq
+	url = ../zeromq4-x
