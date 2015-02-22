@@ -4,8 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\Server.vcxproj", "{DD8094A4-9A06-48C2-8089-8F9CD17DB56A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E283F37-A4ED-41B7-A3E6-A2D89D131A30} = {3E283F37-A4ED-41B7-A3E6-A2D89D131A30}
+		{1738D5F6-ED1E-47E0-B2F0-456864B93C1E} = {1738D5F6-ED1E-47E0-B2F0-456864B93C1E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Client.vcxproj", "{010C073D-B9CB-4FF6-8CA5-5029D6A6A2C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E283F37-A4ED-41B7-A3E6-A2D89D131A30} = {3E283F37-A4ED-41B7-A3E6-A2D89D131A30}
+		{1738D5F6-ED1E-47E0-B2F0-456864B93C1E} = {1738D5F6-ED1E-47E0-B2F0-456864B93C1E}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "protobuf", "protobuf", "{79C6CA55-40CE-4F5F-A29E-F06C0158D617}"
 EndProject
