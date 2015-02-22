@@ -1,0 +1,7 @@
+
+package Messages; 
+
+message Reply
+{
+	optional string text = 1;
+}

@@ -1,23 +1,38 @@
 #include <iostream>
 #include <string>
 
-#include "proto/client.pb.h"
+#include <zmq.hpp>
+
+#include "proto/request.pb.h"
+#include "proto/reply.pb.h"
 
 int main(int argc, char **argv)
 {
 	std::cout << "Client running" << std::endl;
 
-	std::string bufferString;
+	zmq::context_t context(1);
+	zmq::socket_t socket(context, ZMQ_REQ);
+	socket.connect("tcp://localhost:5555");
 
-	client::ClientInfo clientInfoIn;
+	while (true)
+	{
+		Messages::Request requestMessage;
+		requestMessage.set_text("Hello Server");
 
-	clientInfoIn.set_name("Herbert");
-	clientInfoIn.SerializeToString(&bufferString);
+		zmq::message_t request(requestMessage.ByteSize());
+		requestMessage.SerializeToArray(request.data(), request.size());
+		socket.send(request);
 
-	client::ClientInfo clientInfoOut;
-	clientInfoOut.ParseFromString(bufferString);
+		zmq::message_t reply;
+		socket.recv(&reply);
 
-	std::cout << "read: " << clientInfoOut.name() << std::endl;
+		Messages::Reply replyMessage;
+		replyMessage.ParseFromArray(reply.data(), reply.size());
+
+		std::cout << "Received reply: " << replyMessage.text() << std::endl;
+
+		Sleep(1000);
+	}
 
 	return 0;
 }

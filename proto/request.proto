@@ -1,0 +1,7 @@
+
+package Messages;
+
+message Request
+{
+	optional string text = 1;
+}

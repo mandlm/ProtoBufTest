@@ -1,7 +1,0 @@
-package client;
-
-message ClientInfo
-{
-	optional string name = 1 [default = ""];
-}
-
