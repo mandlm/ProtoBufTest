@@ -84,24 +84,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="proto\reply.pb.cc" />
-    <ClCompile Include="proto\request.pb.cc" />
+    <ClCompile Include="proto\Messages.pb.cc" />
     <ClCompile Include="Server.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\proto\reply.proto">
+    <CustomBuild Include="..\proto\Messages.proto">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\protoc.exe -I=%(RelativeDir) --cpp_out=$(ProjectDir)\proto %(Identity)</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\protoc.exe -I=%(RelativeDir) --cpp_out=$(ProjectDir)\proto %(Identity)</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">proto\%(Filename).pb.h;proto\%(Filename).pb.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">proto\%(Filename).pb.h;proto\%(Filename).pb.cc</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\proto\request.proto">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\protoc.exe -I=%(RelativeDir) --cpp_out=$(ProjectDir)\proto %(Identity)</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\protoc.exe -I=%(RelativeDir) --cpp_out=$(ProjectDir)\proto %(Identity)</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">proto\%(Filename).pb.h;proto\%(Filename).pb.cc</Outputs>
@@ -109,8 +99,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="proto\reply.pb.h" />
-    <ClInclude Include="proto\request.pb.h" />
+    <ClInclude Include="proto\Messages.pb.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

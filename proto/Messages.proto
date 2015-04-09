@@ -1,0 +1,20 @@
+
+option cc_generic_services = true;
+
+package Messages;
+
+message PingRequest
+{
+	optional string text = 1;
+}
+
+message PingReply
+{
+	optional string text = 1;
+}
+
+service PingService
+{
+	rpc Ping(PingRequest) returns (PingReply);
+	rpc Ping2(PingRequest) returns (PingReply);
+}

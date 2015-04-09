@@ -21,26 +21,17 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="proto\reply.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
-    <ClCompile Include="proto\request.pb.cc">
+    <ClCompile Include="proto\Messages.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\proto\reply.proto">
-      <Filter>proto</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\proto\request.proto">
+    <CustomBuild Include="..\proto\Messages.proto">
       <Filter>proto</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="proto\reply.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
-    <ClInclude Include="proto\request.pb.h">
+    <ClInclude Include="proto\Messages.pb.h">
       <Filter>proto</Filter>
     </ClInclude>
   </ItemGroup>
